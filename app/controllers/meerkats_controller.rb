@@ -1,4 +1,6 @@
 class MeerkatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @meerkats = Meerkat.all
   end

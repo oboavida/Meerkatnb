@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'meerkats#index'
+
+  get :test, to: 'pages#test'
 
   resources :users, except: [:index] do
     resources :meerkats do

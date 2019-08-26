@@ -1,14 +1,11 @@
 .banner {
-  width: 100%;
-  z-index: -1;
   background-size: cover;
-  position: fixed;
-  top: 0px;
   background-position: center;
   height: 100vh;
   padding: 150px 0;
   background: linear-gradient(rgba(0,0,0,0.04),rgba(0,0,0,0.3)),
   url(asset_path('meerkat_rezdy_lg.jpg'));
+  margin-top: -40px;
 }
 
 .banner h1 {
