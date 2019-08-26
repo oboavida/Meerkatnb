@@ -8,8 +8,22 @@
   </div>
 </div>
 
-<div>
-  <% @meerkats.each do |meerkat| %>
-    <p><%= meerkat.name %></p>
-  <% end %>
+<div class="container my-5">
+    <div class="row">
+      <% @meerkats.each do |meerkat| %>
+        <div class="col-sm-5 col-lg-3 col-md-4 mb-3">
+          <div class="card-trip">
+            <img src="https://pbs.twimg.com/profile_images/1358828966/suricatas_400x400.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= meerkat.name %></h2>
+                <p><%= meerkat.specialty %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </div>
