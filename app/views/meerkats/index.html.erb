@@ -1,6 +1,15 @@
-<h1>Meerkats#index</h1>
-<p>Find me in app/views/meerkats/index.html.erb</p>
+<% content_for :class_name, 'transparent' %>
 
-<% @meerkats.each do |meerkat| %>
-  <p><%= meerkat.name %></p>
-<% end %>
+<div class="banner">
+  <div id="banner-info" class="container">
+    <h1>Welcome to Meerkatnb</h1>
+    <p>The perfect platform to find a Meerkat to help you solve your problems</p>
+    <a class="btn btn-transparent" href="#">Search available Meerkats!</a>
+  </div>
+</div>
+
+<div>
+  <% @meerkats.each do |meerkat| %>
+    <p><%= meerkat.name %></p>
+  <% end %>
+</div>
