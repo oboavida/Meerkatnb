@@ -1,2 +1,12 @@
-<h1>Meerkats#new</h1>
-<p>Find me in app/views/meerkats/new.html.erb</p>
+<h1>Create a new Meerkat</h1>
+
+<%= simple_form_for [@user, @meerkat], html: { autocomplete: 'off' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :specialty %>
+  <%= f.input :age %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.input :photo %>
+  <%= f.submit %>
+<% end %>
