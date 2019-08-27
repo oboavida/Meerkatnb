@@ -1,6 +1,7 @@
 class MeerkatsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :fetch_user, only: [:new, :create]
+  before_action :fetch_meerkat, only: [:edit, :update]
 
   def index
     @meerkats = Meerkat.all
@@ -26,15 +27,17 @@ class MeerkatsController < ApplicationController
     end
   end
 
-#   def edit
-#     @meerkat = Meerkat.find(params[:id])
-#   end
+  def edit
+  end
 
-#   def update
-#     @meerkat = Meerkat.find(params[:id])
-#     @meerkat.update(meerkat_params)
-#     @meerkat.save
-#   end
+  def update
+    @meerkat.update(meerkat_params)
+    if @meerkat.save
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
 #   def destroy
 #     @meerkat = Meerkat.find(params[:id])
@@ -45,6 +48,10 @@ class MeerkatsController < ApplicationController
 
   def fetch_user
     @user = User.find(params[:user_id])
+  end
+
+  def fetch_meerkat
+    @meerkat = Meerkat.find(params[:id])
   end
 
   def meerkat_params
