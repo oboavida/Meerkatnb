@@ -16,5 +16,10 @@
     <% end %><br/>
   </div>
 
-  <%= link_to 'Go back', root_path%>
+  <%= link_to 'Delete this meerkat', meerkat_path(@meerkat),
+    method: :delete,
+    data: { confirm: "Are you sure you want to delete this meerkat?"},
+    class: "btn btn-light" %>
+
+  <%= link_to 'Go back', meerkat_path(@meerkat), class: "btn btn-light"%>
 </div>

@@ -1,7 +1,7 @@
 class MeerkatsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :fetch_user, only: [:new, :create]
-  before_action :fetch_meerkat, only: [:edit, :update]
+  before_action :fetch_meerkat, only: [:edit, :update, :destroy]
 
   def index
     @meerkats = Meerkat.all
@@ -39,10 +39,10 @@ class MeerkatsController < ApplicationController
     end
   end
 
-#   def destroy
-#     @meerkat = Meerkat.find(params[:id])
-#     @meerkat.destroy
-#   end
+  def destroy
+    @meerkat.destroy
+    redirect_to root_path
+  end
 
   private
 
