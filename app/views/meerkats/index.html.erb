@@ -7,24 +7,23 @@
     <a class="btn btn-transparent" href="#">Search available Meerkats!</a>
   </div>
 </div>
-<div class="container my-5">
-    <div class="row">
-      <% @meerkats.each do |meerkat| %>
-        <%= link_to meerkat_path(meerkat) do %>
-          <div class="col-sm-5 col-lg-3 col-md-4 mb-3">
-            <div class="card-trip">
-              <%= image_tag(photo_or_fallback(meerkat)) %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= meerkat.name %></h2>
-                  <p><%= meerkat.specialty %></p>
-                </div>
-                <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-              </div>
+
+<div class="cards mb-5">
+  <% @meerkats.each do |meerkat| %>
+    <%= link_to meerkat_path(meerkat) do %>
+      <div class="card-trip">
+        <%= image_tag(photo_or_fallback(meerkat)) %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= meerkat.name %></h2>
+              <p><%= meerkat.specialty %></p>
             </div>
+            <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
-        <% end %>
       <% end %>
     </div>
+  <% end %>
 </div>
+
+
