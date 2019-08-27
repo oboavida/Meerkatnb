@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: $dark-gray;
+}
