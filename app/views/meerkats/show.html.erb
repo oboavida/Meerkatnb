@@ -1,38 +1,47 @@
-<h1>Meerkats#show</h1>
-<p>Find me in app/views/meerkats/show.html.erb</p>
-
-<h2><%= @meerkat.name %></h2>
-<p><%= @meerkat.age %> years old 📍 from <%= @meerkat.location.capitalize %></p>
-<p><%= @meerkat.specialty.capitalize %></p>
-
-<div class="row">
-  <div class="extra-info">
-    <p><%= @meerkat.description %></p>
-
-    <p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
-
-    <% if policy(@meerkat).edit? %>
-      <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
-    <% end %>
-
-    <%= link_to "Back to search page", root_path, class: "btn btn-light" %>
-  </div>
-
-  <div class="card">
-    <%= @meerkat.price %> € per day
-    <%= simple_form_for([@meerkat, Reservation.new]) do |f| %>
-      <div class="row form-wrapper" style="width: 400px; margin: 0;">
-        <div class="col-md-6">
-          <%= f.input :date_start, as: :string, placeholder: 'Start Date', class: 'form-control', required: false, input_html: {class: "datepicker"} %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control', readonly: 'true', required: false, input_html: {class: "datepicker"}  %>
-        </div>
-        <br/>
-        <div class="col-md-6">
-          <%= f.submit "Book Now", class: "btn btn-primary" %>
-        </div>
+<div class="bg-white border-top">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-8">
+        <h2><%= @meerkat.name %></h2>
+        <p>About: <%= @meerkat.age %> years old 📍 from <%= @meerkat.location.capitalize %></p>
+        <p>Specialty: <%= @meerkat.specialty.capitalize %></p>
       </div>
-    <% end %>
+      <div class="col-4">
+        <%= image_tag(photo_or_fallback(@meerkat), class: "w-100 rounded") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-8">
+      <p><%= @meerkat.description %></p>
+
+      <p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
+
+      <% if policy(@meerkat).edit? %>
+        <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
+      <% end %>
+
+      <%= link_to "Back to search page", root_path, class: "btn btn-light" %>
+    </div>
+
+    <div class="col-md-4">
+      <div class="bg-white border p-3 sticky-top">
+        <div class="d-flex justify-content-between mt-3">
+          <p> Price per day: </p>
+          <p><strong> <%= @meerkat.price %> € </strong></p>
+        </div>
+        <%= simple_form_for([@meerkat, Reservation.new]) do |f| %>
+          <div class="d-flex justify-content-between mt-3">
+            <%= f.input :date_start, as: :string, placeholder: 'Start Date', class: 'form-control', required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control', readonly: 'true', required: false, input_html: {class: "datepicker"}  %>
+          </div>
+            <br/>
+            <%= f.submit "Book Now", class: "btn btn-primary w-100" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
