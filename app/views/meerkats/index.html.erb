@@ -8,8 +8,13 @@
   </div>
 </div>
 
-<div>
+<div class="cards mb-5">
   <% @meerkats.each do |meerkat| %>
-    <p><%= meerkat.name %></p>
+      <%= link_to meerkat_path(meerkat) do %>
+      <div class="card">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= photo_or_fallback(meerkat) %>)">
+        </div>
+        <%= meerkat.name %>
+      </div>
+    <% end %>
   <% end %>
-</div>
