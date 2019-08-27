@@ -7,9 +7,9 @@ class MeerkatsController < ApplicationController
     @user = current_user if user_signed_in?
   end
 
-  # def show
-  #   @meerkat = Meerkat.find(params[:id])
-  # end
+  def show
+    @meerkat = Meerkat.find(params[:id])
+  end
 
   def new
     @meerkat = Meerkat.new
