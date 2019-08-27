@@ -9,6 +9,7 @@ class MeerkatsController < ApplicationController
 
   def show
     @meerkat = Meerkat.find(params[:id])
+    @owner = @meerkat.user
   end
 
   def new

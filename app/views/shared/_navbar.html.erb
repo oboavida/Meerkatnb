@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to 'Add new Meerkat', new_user_meerkat_path(@user), class: "nav-link" %>
+          <%= link_to 'Add new Meerkat', new_user_meerkat_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Logout", "#", class: "nav-link" %>
