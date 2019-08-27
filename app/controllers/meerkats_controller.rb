@@ -45,6 +45,7 @@ class MeerkatsController < ApplicationController
 
   def destroy
     @meerkat.destroy
+    authorize @meerkat
     redirect_to root_path
   end
 
