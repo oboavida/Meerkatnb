@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'meerkats#index'
 
-  get :test, to: 'pages#test'
-
   resources :users, except: [:index] do
     resources :meerkats do
       resources :reviews, only: [:new, :create]
