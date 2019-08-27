@@ -4,14 +4,35 @@
 <h2><%= @meerkat.name %></h2>
 <p><%= @meerkat.age %> years old 📍 from <%= @meerkat.location.capitalize %></p>
 <p><%= @meerkat.specialty.capitalize %></p>
-<p><%= @meerkat.description %></p>
 
-<p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
+<div class="row">
+  <div class="extra-info">
+    <p><%= @meerkat.description %></p>
 
-<% if policy(@meerkat).edit? %>
-  <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
-<% end %>
+    <p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
 
-<%= link_to "Back to search page", root_path, class: "btn btn-light" %>
+    <% if policy(@meerkat).edit? %>
+      <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
+    <% end %>
 
+    <%= link_to "Back to search page", root_path, class: "btn btn-light" %>
+  </div>
 
+  <div class="card">
+    <%= @meerkat.price %> € per day
+    <%= simple_form_for([@meerkat, Reservation.new]) do |f| %>
+      <div class="row form-wrapper" style="width: 400px; margin: 0;">
+        <div class="col-md-6">
+          <%= f.input :date_start, as: :string, placeholder: 'Start Date', class: 'form-control', required: false, input_html: {class: "datepicker"} %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control', readonly: 'true', required: false, input_html: {class: "datepicker"}  %>
+        </div>
+        <br/>
+        <div class="col-md-6">
+          <%= f.submit "Book Now", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
