@@ -36,6 +36,7 @@ class MeerkatsController < ApplicationController
   end
 
   def update
+    authorize @meerkat
     @meerkat.update(meerkat_params)
     if @meerkat.save
       redirect_to root_path
@@ -52,9 +53,9 @@ class MeerkatsController < ApplicationController
 
   private
 
-  # def fetch_user
-  #   @user = User.find(params[:user_id])
-  # end
+  def fetch_user
+    @user = current_user
+  end
 
   def fetch_meerkat
     @meerkat = Meerkat.find(params[:id])

@@ -1,6 +1,6 @@
 <h1>Create a new Meerkat</h1>
 
-<%= simple_form_for [@user, @meerkat], html: { autocomplete: 'off' } do |f| %>
+<%= simple_form_for (@meerkat), html: { autocomplete: 'off' } do |f| %>
   <%= f.input :name %>
   <%= f.input :specialty %>
   <%= f.input :age %>
