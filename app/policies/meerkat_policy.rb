@@ -21,4 +21,3 @@ class MeerkatPolicy < ApplicationPolicy
     record.user == user
   end
 end
-
