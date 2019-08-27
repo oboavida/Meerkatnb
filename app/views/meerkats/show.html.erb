@@ -35,4 +35,19 @@
       </div>
     <% end %>
   </div>
+
+  <h1 class="header">Add an review to <%= @meerkat.name.capitalize %></h1>
+
+  <%= simple_form_for ([@meerkat, Review.new]) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
+      <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %> <span class="button-divider">|</span>
+      <%= link_to 'Cancel', @cocktail, class: 'btn btn-lg btn-outline-secondary' %>
+    </div>
+  <% end %>
+
 </div>
