@@ -1,5 +1,5 @@
 module UserHelper
-  def photo_or_fallback(user)
+  def photo_or_fallback_user(user)
     if user.photo.present?
       # cl_image_tag # => generates a <img> tag
       cl_image_path(user.photo)
