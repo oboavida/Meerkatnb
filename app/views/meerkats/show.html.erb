@@ -8,7 +8,9 @@
 
 <p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
 
-<%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
+<% if policy(@meerkat).edit? %>
+  <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
+<% end %>
 
 <%= link_to "Back to search page", root_path, class: "btn btn-light" %>
 

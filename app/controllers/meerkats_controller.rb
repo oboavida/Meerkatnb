@@ -4,21 +4,24 @@ class MeerkatsController < ApplicationController
   before_action :fetch_meerkat, only: [:edit, :update, :destroy]
 
   def index
-    @meerkats = Meerkat.all
+    @meerkats = policy_scope(Meerkat)
     @user = current_user if user_signed_in?
   end
 
   def show
     @meerkat = Meerkat.find(params[:id])
+    authorize @meerkat
     @owner = @meerkat.user
   end
 
   def new
     @meerkat = Meerkat.new
+    authorize @meerkat
   end
 
   def create
     @meerkat = Meerkat.new(meerkat_params)
+    authorize @meerkat
     @meerkat.user = @user
     if @meerkat.save
       redirect_to root_path
@@ -28,6 +31,7 @@ class MeerkatsController < ApplicationController
   end
 
   def edit
+    authorize @meerkat
   end
 
   def update
