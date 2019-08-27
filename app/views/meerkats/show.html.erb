@@ -1,6 +1,24 @@
 <h1>Meerkats#show</h1>
 <p>Find me in app/views/meerkats/show.html.erb</p>
 
-<%= @meerkat.name %>
+<h2><%= @meerkat.name %></h2>
+<p><%= @meerkat.age %> years old 📍 from <%= @meerkat.location.capitalize %></p>
+<p><%= @meerkat.specialty.capitalize %></p>
+<p><%= @meerkat.description %></p>
 
-<%= link_to "Home Page", root, class: "btn btn-light" %>
+<p>This beautiful meerkat belongs to 💛 <%= @owner.name %></p>
+
+<p> RESERVATION: </p>
+<p><%= @meerkat.price %> € per hour</p>
+
+<% form_for (@reservations) do |f| %>
+  <%= f.
+
+<div>
+
+<%#= link_to "Reserve", root_path, class: "btn btn-light" %>
+</div>
+
+<%= link_to "Back to search page", root_path, class: "btn btn-light" %>
+
+
