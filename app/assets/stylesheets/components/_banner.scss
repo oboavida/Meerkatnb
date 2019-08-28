@@ -1,5 +1,6 @@
 .banner {
-  background-size: cover;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   background-position: center;
   height: 100vh;
   padding: 150px 0;

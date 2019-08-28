@@ -1,21 +1,16 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
-
-<div class="container">
-  <div class="row">
-    <div class="card-form-reviews">
-      <p class="header-reviews">Enjoyed <%= @reservation.meerkat.name.capitalize %> service? Add a review!</p>
-      <%= simple_form_for ([@reservation, Review.new]) do |f| %>
-        <div class="form-inputs reviews">
+<div class="d-flex negative_margin">
+  <div id="" class="col-md-8 form-area">
+    <h1>Give <%= @reservation.meerkat.name.capitalize %> a review!</h1>
+    <div class="form mt-4">
+        <%= simple_form_for ([@reservation, Review.new]) do |f| %>
           <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
           <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
-        </div>
-      <% end %>
+          <%= f.submit 'Save', class: 'btn btn-mustard' %>
+        <% end %>
     </div>
+
+  </div>
+  <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://wi-images.condecdn.net/image/Mmda77BqRBJ/crop/1620/f/meerkats.jpg')">
+
   </div>
 </div>
-
