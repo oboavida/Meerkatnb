@@ -2,7 +2,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  background: white;
+  background-color: transparent;
+  z-index: 100;
 
   a {
     color: $dark-gray;

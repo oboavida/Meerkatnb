@@ -1,0 +1,28 @@
+.negative_margin {
+  margin-top: -40px;
+}
+
+#form-area {
+  padding: 100px 100px 0 120px;
+  height: 100vh;
+  background-color: rgb(245,245,245)
+}
+
+.center-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.z-index-positive {
+  z-index: 1000;
+}
+
+#form-area .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(230,230,230);
+  &:focus {
+    box-shadow: 0 0 0 0;
+  }
+}
