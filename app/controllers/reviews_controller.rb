@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     authorize @review
 
     @review.save
-    redirect_to meerkat_path(@meerkat)
+    redirect_to meerkat_path(@reservation.meerkat)
   end
 
   private
