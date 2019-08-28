@@ -41,9 +41,14 @@
   </div>
 
   <div class="review">
-    <h4>Celestino Lopes</h4>
-    <p>★★★★★</p>
-    <p><%= @meerkat.description %></p>
+    <% @meerkat.reviews.each do |review| %>
+      <div class="user-photo-name d-flex align-items-center">
+        <div><%= image_tag photo_or_fallback_user(review.user), class: "avatar dropdown-toggle" %></div>
+        <div class="mt-3 ml-2"><p><%= review.user.name %></p></div>
+      </div>
+      <p>Rating: <%= review.rating %></p>
+      <p><%= review.comment %></p>
+    <% end %>
   </div>
 
   <% if policy(@meerkat).edit? %>
