@@ -44,20 +44,4 @@
       </div>
     </div>
 
-  <div class="row">
-    <div class="card-form-reviews">
-      <p class="header-reviews">Enjoyed <%= @meerkat.name.capitalize %> service? Add a review!</p>
-      <%= simple_form_for ([@meerkat, Review.new]) do |f| %>
-        <div class="form-inputs reviews">
-          <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
-          <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
 </div>
