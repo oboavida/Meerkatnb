@@ -11,3 +11,14 @@
     color: white;
   }
 }
+
+.btn-mustard {
+  padding: 15px 30px;
+  width: 100%;
+  color: $mustard;
+  border-color: $mustard;
+  &:hover {
+    background-color: $mustard;
+    color: white;
+  }
+}

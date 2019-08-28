@@ -1,0 +1,29 @@
+.bookings-card {
+  padding: 40px;
+  width: 434px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 19px;
+    color: $dark-gray;
+  }
+
+}
+
+.sticky {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+}
+
+.bookings-card .form-control {
+  border: none !important;
+  border-radius: 0px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
