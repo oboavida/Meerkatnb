@@ -1,7 +1,26 @@
-<h1>My reservations</h1>
+<div class="border-top">
+  <div class="container p-3">
+    <h1>My reservations</h1>
 
-
-
-<% @reservations.each do |reservation| %>
-  <p> <%= reservation.date_start %> to <%= reservation.date_end %> </p>
-<% end %>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Meerkat</th>
+          <th>Specialty</th>
+          <th>Date Start</th>
+          <th>Date End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+            <tr>
+              <td><%= link_to reservation.meerkat.name, meerkat_path(reservation.meerkat) %></td>
+              <td><%= reservation.meerkat.specialty %></td>
+              <td><%= reservation.date_start %></td>
+              <td><%= reservation.date_end %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
