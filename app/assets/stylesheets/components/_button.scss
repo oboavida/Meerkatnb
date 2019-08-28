@@ -13,12 +13,16 @@
 }
 
 .btn-mustard {
-  padding: 15px 30px;
-  width: 100%;
+  padding: 13px 30px;
   color: $mustard;
   border-color: $mustard;
+  border-radius: 0px;
   &:hover {
     background-color: $mustard;
     color: white;
   }
+}
+
+.full-width {
+  width: 100%;
 }
