@@ -1,9 +1,10 @@
 <h1>Reviews#new</h1>
 <p>Find me in app/views/reviews/new.html.erb</p>
 
+<div class="container">
   <div class="row">
     <div class="card-form-reviews">
-      <p class="header-reviews">Enjoyed <%= @meerkat.name.capitalize %> service? Add a review!</p>
+      <p class="header-reviews">Enjoyed <%= @reservation.meerkat.name.capitalize %> service? Add a review!</p>
       <%= simple_form_for ([@reservation, Review.new]) do |f| %>
         <div class="form-inputs reviews">
           <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
@@ -15,5 +16,6 @@
         </div>
       <% end %>
     </div>
-
   </div>
+</div>
+

@@ -1,10 +1,21 @@
 class ReviewsController < ApplicationController
-  before_action :fetch_reservation, only: [:create]
+  before_action :fetch_reservation, only: [:new, :create]
+
+  def index
+    @reviews = policy_scope(Review)
+    @user = current_user if user_signed_in?
+  end
+
+  def new
+    @review = Review.new
+    authorize @review
+  end
 
   def create
     @review = Review.new(review_params)
     @review.reservation = @reservation
     @review.user = current_user
+    authorize @review
 
     @review.save
     redirect_to meerkat_path(@meerkat)
@@ -17,6 +28,6 @@ class ReviewsController < ApplicationController
   end
 
   def fetch_reservation
-    @meerkat = Meerkat.find(params[:meerkat_id])
+    @reservation = Reservation.find(params[:reservation_id])
   end
 end
