@@ -2,7 +2,7 @@
   margin-top: -40px;
 }
 
-#form-area {
+.form-area {
   padding: 100px 100px 0 120px;
   height: 100vh;
   background-color: rgb(245,245,245)
@@ -18,7 +18,7 @@
   z-index: 1000;
 }
 
-#form-area .form-control {
+.form-area .form-control {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgb(230,230,230);
