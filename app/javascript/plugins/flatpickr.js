@@ -5,6 +5,7 @@ import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 flatpickr(".datepicker", {
   altInput: true,
   mode: "range",
+  minDate: "today",
   onClose: function(selectedDates) {
           document.querySelector('#total-price').innerHTML = '';
 
