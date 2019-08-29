@@ -53,7 +53,9 @@ class MeerkatsController < ApplicationController
   end
 
   def list_own
+    @user = current_user if user_signed_in?
     @meerkats = policy_scope(Meerkat).where(user: current_user)
+    authorize @meerkats
   end
 
   private

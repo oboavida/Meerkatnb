@@ -8,13 +8,17 @@ class Reservation < ApplicationRecord
   validate :date_start_before_date_end
 
   def date_start_cannot_be_in_the_past
-    if date_start.present? && date_start < Date.today
+    return if date_start.nil?
+
+    if date_start.past?
       errors.add(:date_start, "Starting date can't be in the past.")
     end
   end
 
   def date_start_before_date_end
-    if date_start.present? && date_end.present? && date_start > date_end
+    return if date_start.nil? || date_end.nil?
+
+    if date_start > date_end
       errors.add(:date_end, "Starting date can't be after end date.")
     end
   end
