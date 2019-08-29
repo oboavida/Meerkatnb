@@ -17,8 +17,13 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
 
-    @review.save
-    redirect_to meerkat_path(@reservation.meerkat)
+    if @review.save
+      flash[:notice] = "Thank you for your review!"
+      redirect_to meerkat_path(@reservation.meerkat)
+    else
+      flash[:alert] = @review.errors.full_messages
+      render :new
+    end
   end
 
   private

@@ -24,12 +24,12 @@
     <h1>Give <%= @reservation.meerkat.name.capitalize %> a review!</h1>
     <div class="form mt-4">
         <%= simple_form_for ([@reservation, Review.new]) do |f| %>
+
           <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
           <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
           <%= f.submit 'Save', class: 'btn btn-mustard' %>
         <% end %>
     </div>
-
   </div>
   <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://wi-images.condecdn.net/image/Mmda77BqRBJ/crop/1620/f/meerkats.jpg')">
 
