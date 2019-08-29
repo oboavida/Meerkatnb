@@ -21,6 +21,8 @@ class ReservationsController < ApplicationController
     @reservation.date_start = params["reservation"]["date_start"].split("to")[0]
     @reservation.date_end = params["reservation"]["date_start"].split("to")[1]
 
+    @reservation.date_end = @reservation.date_start if @reservation.date_end.nil?
+
     if @reservation.save
       flash[:notice] = "You have just made a reservation."
       redirect_to reservations_path
