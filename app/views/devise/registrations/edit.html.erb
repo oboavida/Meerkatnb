@@ -1,51 +1,81 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-
-    <%= f.input :photo,
-                hint: "leave it blank if you don't want to change it",
+<div class="d-flex negative_margin">
+  <div id="" class="col-md-8 form-area">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <p style="font-size: 12px; color: rgb(190,190,190)">*leave fields it blank if you don't want to change them</p>
+    <div class="form mt-4">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :name,
                 required: false,
-                input_html: { autocomplete: "avatar" } %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :name,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "full-name" } %>
-    <%= f.input :description,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "description" } %>
+                input_html: { autocomplete: "full-name" },
+                label: false,
+                placeholder: 'Name' %>
 
-    <%= f.input :email, required: true, autofocus: true %>
+          </div>
+          <div class="col">
+            <%= f.input :email, required: true, autofocus: true,
+                label: false,
+                placeholder: 'Name' %>
+          </div>
+        </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :description,
+                required: false,
+                input_html: { autocomplete: "description" },
+                label: false,
+                placeholder: 'Description' %>
+          </div>
+        </div>
 
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+        <div class="row">
+          <div class="col">
+            <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "new-password" }, label: false,
+                  label: false,
+                  placeholder: 'New password' %>
+          </div>
+          <div class="col">
+            <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password" },
+                  label: false,
+                  placeholder: 'Password confirmation' %>
+          </div>
+          <div class="col">
+            <%= f.input :password_confirmation,
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                label: false,
+                placeholder: 'Password confirmation' %>
+          </div>
+        </div>
+        <div class="">
+          <label class="btn btn-mustard">
+            Add photo
+            <span style="display:none;">
+              <%= f.input :photo,
+                  required: false,
+                  input_html: { autocomplete: "avatar" } %>
+              <%= f.input :photo_cache, as: :hidden %>
+            </span>
+          </label><br/>
+          <%= f.button :submit, "Update", class: "btn btn-mustard mb-2" %>
+        </div>
+        <% end %>
+        <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-mustard mr-1" %>
+        <%= link_to "Back", :back, class: "btn btn-mustard" %>
+    </div>
+
+
+
 
   </div>
+  <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://www.zoobarcelona.cat/sites/default/files/animal/2016-12/Suricata%20suricatta3.jpg')">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
