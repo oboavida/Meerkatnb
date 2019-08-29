@@ -1,31 +1,10 @@
-<h1>Meerkat Reviews</h1>
-<p></p>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for @review do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send your review" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="card-form-reviews">
-      <p class="header-reviews">Enjoyed <%= @reservation.meerkat.name.capitalize %> service? Add a review!</p>
-      <%= simple_form_for ([@reservation, Review.new]) do |f| %>
-        <div class="form-inputs reviews">
 <div class="d-flex negative_margin">
   <div id="" class="col-md-8 form-area">
     <h1>Give <%= @reservation.meerkat.name.capitalize %> a review!</h1>
     <div class="form mt-4">
         <%= simple_form_for ([@reservation, Review.new]) do |f| %>
 
-          <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
           <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
           <%= f.submit 'Save', class: 'btn btn-mustard' %>
         <% end %>
