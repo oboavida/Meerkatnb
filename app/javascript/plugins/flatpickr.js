@@ -17,7 +17,7 @@ flatpickr(".datepicker", {
           const numberOfDays = a.diff(b, 'days') + 1;
 
           const price = document.querySelector('.meerkat-price').innerText;
-          const pricePerDay = Number.parseInt(price.split("")[0], 10);
+          const pricePerDay = Number.parseInt(price.split(" ")[0], 10);
           document.querySelector('#total-price').insertAdjacentHTML('afterbegin', pricePerDay * numberOfDays);
     }
 });

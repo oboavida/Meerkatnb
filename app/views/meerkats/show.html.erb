@@ -6,7 +6,6 @@
     <p>from <%= @meerkat.location.capitalize %></p>
     <p><%= @meerkat.description %></p>
     <p>Overall service rating:</p>
-    <p>★★★★★</p>
   </div>
 
   <div id="show-image-container" class="col-lg-6">
@@ -21,9 +20,8 @@
   </div>
   <div>
   <%= simple_form_for([@meerkat, Reservation.new]) do |f| %>
-    <div id="flatpicker-dates" class="d-flex justify-content-between mt-3">
-      <%= f.input :date_start, as: :string, placeholder: 'Start Date', class: 'form-control show-form', required: false, input_html: {class: "datepicker"}, label: false %>
-      <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control show-form', readonly: 'true', required: false, input_html: {class: "datepicker"}, label: false  %>
+    <div id="flatpicker-dates" class="">
+      <%= f.input :date_start, as: :string, placeholder: 'Select your dates', class: 'form-control show-form', required: false, input_html: {class: "datepicker"}, label: false %>
     </div>
     <div>
       <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4" %>

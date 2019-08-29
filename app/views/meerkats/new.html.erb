@@ -2,12 +2,12 @@
   <div id="" class="col-md-8 form-area">
     <h1>Create a new Meerkat</h1>
     <div class="form mt-4">
-        <%= simple_form_for (@meerkat), html: { autocomplete: 'off' } do |f| %>
+      <%= simple_form_for (@meerkat), html: { autocomplete: 'off' } do |f| %>
         <div class="row">
           <div class="col">
             <%= f.input :name, placeholder: 'Name', label: false %>
             <%= f.input :specialty, placeholder: 'Specialty', label: false %>
-            <%= f.input :age, placeholder: 'Age' , label: false %>
+            <%= f.input :age,placeholder: 'Age' , label: false %>
           </div>
           <div class="col">
             <%= f.input :price, placeholder: 'Price', label: false  %>
@@ -25,11 +25,8 @@
         </label><br/>
 
         <%= f.submit 'Create Meerkat', class: "btn btn-mustard" %>
-        <% end %>
+      <% end %>
     </div>
-
-
-
 
   </div>
   <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://travelafricamag.com/wp-content/uploads/2019/04/AMPM333-Meerkat-resting-on-cool-sand-Toon.jpg')">

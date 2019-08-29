@@ -23,7 +23,7 @@ class MeerkatsController < ApplicationController
     authorize @meerkat
     @meerkat.user = current_user
     if @meerkat.save
-      redirect_to root_path
+      redirect_to meerkat_path(@meerkat)
     else
       render :new
     end
