@@ -41,7 +41,7 @@
   </div>
 
   <div class="review">
-    <% @meerkat.reviews.each do |review| %>
+    <% @meerkat.reviews.sort_by(&:created_at).reverse.each do |review| %>
       <div class="user-photo-name d-flex align-items-center">
         <div><%= image_tag photo_or_fallback_user(review.user), class: "avatar dropdown-toggle" %></div>
         <div class="mt-3 ml-2"><p><%= review.user.name %></p></div>
