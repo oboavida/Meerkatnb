@@ -53,7 +53,7 @@ meerkat_attributes = [
     price: rand(5..50),
     location: Faker::Address.city,
     description: "Learned with the master of meerkat martial arts, Shung Sun Tzu to defend against the predators. Put her knowledge to work as a rented assasin, if you want someone to be killed call her. Get a special edge with this cute but killer meerkat. She will leave your enemies in the dust. Price may change depending of the sizes of the victims.",
-    remote_photo_url: 'http://www.pxleyes.com/images/contests/mixed-media-46/fullsize/mixed-media-46-591800711cfb7.png'
+    remote_photo_url: 'https://media.giphy.com/media/3ohs7We2Tlv6gak8Ra/giphy.gif'
   },
   {
     user: User.all.sample,
