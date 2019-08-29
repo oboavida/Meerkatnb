@@ -52,6 +52,10 @@ class MeerkatsController < ApplicationController
     end
   end
 
+  def list_own
+    @meerkats = policy_scope(Meerkat).where(user: current_user)
+  end
+
   private
 
   def fetch_user

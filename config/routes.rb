@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'meerkats#index'
 
   resources :meerkats do
+    collection :list_own
     resources :reservations, only: [:new, :create]
   end
 
