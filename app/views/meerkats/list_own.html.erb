@@ -1,8 +1,8 @@
 <h1>My Meerkats</h1>
 
-<div class="cards mb-5">
-  <% @meerkats.each do |meerkat| %>
-    <%= link_to meerkat_path(meerkat) do %>
+<% @meerkats.each do |meerkat| %>
+  <div class="cards mb-5">
+    <%= link_to list_own_meerkats_path, :id => 'lreservations', 'data-toggle' => 'modal', 'data-target' => '#reservationsModal' do %>
       <div class="card-trip">
         <%= image_tag(photo_or_fallback(meerkat)) %>
           <div class="card-trip-infos">
@@ -10,9 +10,50 @@
               <h2><%= meerkat.name %></h2>
               <p><%= meerkat.specialty %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
+            <div>
+              <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
+            </div>
           </div>
         </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="reservationsModal" tabindex="-1" role="dialog" aria-labelledby="reservationsModalTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reservationsModalTitle">Reservations for <%= meerkat.name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th>Rentee</th>
+                <th>Date Start</th>
+                <th>Date End</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% meerkat.reservations.sort_by(&:created_at).reverse.each do |reservation| %>
+                  <tr>
+                    <td><%= reservation.user.name %></td>
+                    <td><%= reservation.date_start %></td>
+                    <td><%= reservation.date_end %></td>
+                  </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <%= link_to 'Edit Meerkat', edit_meerkat_path(meerkat), class: "btn btn-mustard" %>
+          <button type="button" class="btn btn-mustard" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
