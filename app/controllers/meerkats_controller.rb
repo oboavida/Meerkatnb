@@ -11,6 +11,7 @@ class MeerkatsController < ApplicationController
     @meerkat = Meerkat.find(params[:id])
     authorize @meerkat
     @owner = @meerkat.user
+    avg_review
   end
 
   def new
@@ -53,6 +54,18 @@ class MeerkatsController < ApplicationController
   end
 
   private
+
+  def avg_review
+    avg = 0
+    @meerkat.reviews.each do |review|
+      avg += review.rating
+    end
+    if avg == 0
+      @result = 0
+    else
+    @result = avg / @meerkat.reviews.count
+    end
+  end
 
   def fetch_user
     @user = current_user
