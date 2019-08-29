@@ -40,11 +40,11 @@
                   placeholder: 'New password' %>
           </div>
           <div class="col">
-            <%= f.input :password_confirmation,
+            <%= f.input :current_password,
                   required: false,
                   input_html: { autocomplete: "new-password" },
                   label: false,
-                  placeholder: 'Password confirmation' %>
+                  placeholder: 'Current password' %>
           </div>
           <div class="col">
             <%= f.input :password_confirmation,
