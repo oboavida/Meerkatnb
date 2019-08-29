@@ -18,9 +18,12 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.meerkat = @meerkat
 
+    @reservation.date_start = params["reservation"]["date_start"].split("to")[0]
+    @reservation.date_end = params["reservation"]["date_start"].split("to")[1]
+
     if @reservation.save
       flash[:notice] = "You have just made a reservation."
-      redirect_to root_path
+      redirect_to reservations_path
     else
       flash[:alert] = @reservation.errors.full_messages
       render template: "meerkats/show"
