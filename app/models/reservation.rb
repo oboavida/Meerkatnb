@@ -1,7 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :meerkat
   belongs_to :user
-  has_one :review, foreign_key: :reservation_id
+  has_one :review, dependent: :destroy
   validates :date_start, presence: true
   validate :date_start_cannot_be_in_the_past
   validate :date_start_before_date_end
