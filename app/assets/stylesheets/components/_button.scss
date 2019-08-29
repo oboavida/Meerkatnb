@@ -2,23 +2,27 @@
   margin-top: 30px;
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(230,164,0,0.8);
   color: white;
   padding: 15px 30px;
   border-radius: 0px;
   &:hover {
-    background-color: rgba(230,164,0,0.8);
+    background-color: rgba(230,164,0,0.6);
     color: white;
   }
 }
 
 .btn-mustard {
-  padding: 15px 30px;
-  width: 100%;
+  padding: 13px 30px;
   color: $mustard;
   border-color: $mustard;
+  border-radius: 0px;
   &:hover {
     background-color: $mustard;
     color: white;
   }
+}
+
+.full-width {
+  width: 100%;
 }

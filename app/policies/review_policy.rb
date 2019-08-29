@@ -1,7 +1,7 @@
 class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(merrkat: meerkat)
+      scope.where(meerkat: meerkat)
     end
   end
 

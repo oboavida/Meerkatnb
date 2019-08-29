@@ -7,10 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Meerkat.destroy_all
-User.destroy_all
-
-puts 'DB limpa'
+# User.destroy_all
+# Meerkat.destroy_all
 
 User.create!(
     name: Faker::Name.unique.name,
@@ -62,7 +60,7 @@ meerkat_attributes = [
     age: 5,
     price: rand(5..50),
     location: Faker::Address.city,
-    description: "Did a course of programing at the Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes have to take a break to smoke in her fancy eletronic cigarette.",
+    description: "Did a course of programing at the Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes has to take a break to smoke her fancy eletronic cigarette.",
     remote_photo_url: 'https://media.giphy.com/media/26DMXuFkfvB8GEQFy/giphy.gif'
   },
   {
@@ -72,7 +70,7 @@ meerkat_attributes = [
     age: 5,
     price: rand(5..50),
     location: Faker::Address.city,
-    description: "Will help you with all your linguistic needs. Pretends that know Mandarin, English, Brazilian Portuguese, Italian, still trying to learn Portugal Portuguese he knows it all. Just ask for any portuguese slang. Came from Joao Pessoa by boat. But actually in a secret mission to get back the gold and sugar that was stolen.--",
+    description: "Will help you with all your linguistic needs. Pretends to know Mandarin, English, Brazilian Portuguese, Italian, still trying to learn Portugal Portuguese he knows it all. Just ask for any portuguese slang. Came from Joao Pessoa by boat. But actually in a secret mission to get back the gold and sugar that was stolen.--",
     remote_photo_url: 'https://media.giphy.com/media/5nbDREevWNzakKPmCV/giphy.gif'
   },
   {
@@ -82,7 +80,7 @@ meerkat_attributes = [
     age: 5,
     price: rand(5..50),
     location: Faker::Address.city,
-    description: "A boss-meerkat.A carrer driving meerkat. Alergic to gluten. Has a bachelor at the Nova Meerkat university, an MBA at the Meerkat international business school.You can acess her linkedin page wwww.linkedin.com/Jojomeerkat. Her only defect it's to be very perfeccionist",
+    description: "A boss-meerkat.A carrer driving meerkat. Alergic to gluten. Has a bachelor at the Nova Meerkat university, an MBA at the Meerkat International Business School.You can acess her linkedin page wwww.linkedin.com/jojomeerkat. Her only defect is perfeccionism.",
     remote_photo_url: 'https://media.giphy.com/media/7zutBuEYICzOO8Gbgy/giphy.gif'
   }
 ]

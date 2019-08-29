@@ -1,25 +1,42 @@
-<div class="container" style="margin-left: 90px;">
-  <div class="form">
+<div class="d-flex negative_margin">
+  <div id="" class="col-md-8 form-area">
     <h1>Edit <%= @meerkat.name %> </h1>
+    <div class="form mt-4">
+        <%= simple_form_for @meerkat, method: :patch, html: { autocomplete: 'off' } do |f| %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :name, placeholder: 'Name', label: false %>
+            <%= f.input :specialty, placeholder: 'Specialty', label: false %>
+            <%= f.input :age, placeholder: 'Age' , label: false %>
+          </div>
+          <div class="col">
+            <%= f.input :price, placeholder: 'Price' , label: false  %>
+            <%= f.input :location, placeholder: 'Location' , label: false  %>
+            <%= f.input :description, placeholder: 'Description' , label: false  %>
+          </div>
+        </div>
 
-    <%= simple_form_for @meerkat, method: :patch, html: { autocomplete: 'off' } do |f| %>
-      <%= f.input :name %>
-      <%= f.input :specialty %>
-      <%= f.input :age %>
-      <%= f.input :price %>
-      <%= f.input :location %>
-      <%= f.input :description %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
+        <label class="btn btn-mustard">
+          Add photo
+          <span style="display:none;">
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </span>
+        </label><br/>
 
-      <%= f.submit 'Submit changes'%>
-    <% end %><br/>
-  </div>
-
-  <%= link_to 'Delete this meerkat', meerkat_path(@meerkat),
+        <%= f.submit 'Submit changes', class: "btn btn-mustard" %>
+        <% end %>
+        <%= link_to 'Delete this meerkat', meerkat_path(@meerkat),
     method: :delete,
     data: { confirm: "Are you sure you want to delete this meerkat?"},
-    class: "btn btn-light" %>
+    class: "btn btn-mustard mt-2" %>
+    </div>
 
-  <%= link_to 'Go back', meerkat_path(@meerkat), class: "btn btn-light"%>
+
+
+
+  </div>
+  <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://cdn.africatravelresource.com/cdn/05explore%2Fexperiences%2Fanimals%2Fmeerkats%2F01/02ATR05010222-IM1002-the-best-locations-for-meerkats-in-africa-1475.jpg')">
+
+  </div>
 </div>

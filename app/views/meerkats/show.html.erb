@@ -26,22 +26,34 @@
       <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control show-form', readonly: 'true', required: false, input_html: {class: "datepicker"}, label: false  %>
     </div>
     <div>
-      <%= f.submit "Book Now", class: "btn btn-mustard" %>
+      <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4" %>
+    </div>
+    <div>
+      <p>Total: <strong><%= @meerkat.price %></strong> € </p>
     </div>
     <% end %>
   </div>
 </div>
 
 <div class="show-reviews">
+  <div class="mb-3">
+    <h2>Reviews</h1>
+  </div>
+
   <div class="review">
-    <h4>Celestino Lopes</h4>
-    <p>★★★★★</p>
-    <p><%= @meerkat.description %></p>
+    <% @meerkat.reviews.each do |review| %>
+      <div class="user-photo-name d-flex align-items-center">
+        <div><%= image_tag photo_or_fallback_user(review.user), class: "avatar dropdown-toggle" %></div>
+        <div class="mt-3 ml-2"><p><%= review.user.name %></p></div>
+      </div>
+      <p>Rating: <%= review.rating %></p>
+      <p><%= review.comment %></p>
+    <% end %>
   </div>
 
   <% if policy(@meerkat).edit? %>
-        <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-light" %>
+        <%= link_to "Edit Meerkat", edit_meerkat_path(@meerkat), class: "btn btn-mustard" %>
       <% end %>
 
-      <%= link_to "Back to search page", root_path, class: "btn btn-light" %>
+      <%= link_to "Back to search page", root_path, class: "btn btn-mustard" %>
 </div>
