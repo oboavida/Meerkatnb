@@ -19,8 +19,10 @@ class ReservationsController < ApplicationController
     @reservation.meerkat = @meerkat
 
     if @reservation.save
+      flash[:notice] = "You have just made a reservation."
       redirect_to root_path
     else
+      flash[:alert] = @reservation.errors.full_messages
       render template: "meerkats/show"
     end
   end
