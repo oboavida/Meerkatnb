@@ -63,7 +63,7 @@ class MeerkatsController < ApplicationController
     if avg == 0
       @result = 0
     else
-    @result = avg / @meerkat.reviews.count
+      @result = avg / @meerkat.reviews.count
     end
   end
 
