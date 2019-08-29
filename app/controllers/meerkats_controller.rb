@@ -30,11 +30,9 @@ class MeerkatsController < ApplicationController
   end
 
   def edit
-    authorize @meerkat
   end
 
   def update
-    authorize @meerkat
     @meerkat.update(meerkat_params)
     if @meerkat.save
       redirect_to root_path
@@ -44,9 +42,14 @@ class MeerkatsController < ApplicationController
   end
 
   def destroy
-    @meerkat.destroy
-    authorize @meerkat
-    redirect_to root_path
+    if @meerkat.reservations.any?
+      flash[:alert] = 'Sorry, the meerkat can\'t be destroyed because it has reservations.'
+      render :show
+    else
+      flash[:notice] = 'The meerkat was destroyed.'
+      @meerkat.destroy
+      redirect_to root_path
+    end
   end
 
   private
@@ -57,6 +60,7 @@ class MeerkatsController < ApplicationController
 
   def fetch_meerkat
     @meerkat = Meerkat.find(params[:id])
+    authorize @meerkat
   end
 
   def meerkat_params
