@@ -17,11 +17,11 @@
 
 <div class="bookings-card sticky">
   <div>
-    <p><strong><%= @meerkat.price %></strong> € / day: </p>
+    <p class="meerkat-price"><strong><%= @meerkat.price %></strong> € / day: </p>
   </div>
   <div>
   <%= simple_form_for([@meerkat, Reservation.new]) do |f| %>
-    <div class="d-flex justify-content-between mt-3">
+    <div id="flatpicker-dates" class="d-flex justify-content-between mt-3">
       <%= f.input :date_start, as: :string, placeholder: 'Start Date', class: 'form-control show-form', required: false, input_html: {class: "datepicker"}, label: false %>
       <%= f.input :date_end, as: :string, placeholder: 'End Date', class: 'form-control show-form', readonly: 'true', required: false, input_html: {class: "datepicker"}, label: false  %>
     </div>
@@ -29,7 +29,7 @@
       <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4" %>
     </div>
     <div>
-      <p>Total: <strong><%= @meerkat.price %></strong> € </p>
+      <p>Total: <strong><span id="total-price">0</span> €</strong> </p>
     </div>
     <% end %>
   </div>
