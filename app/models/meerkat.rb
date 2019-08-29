@@ -8,7 +8,6 @@ class Meerkat < ApplicationRecord
   validates :specialty, presence: true
   validates :age, presence: true, numericality: { greater_than: 1, less_than_or_equal_to: 17, only_integer: true }
   validates :price, presence: true, numericality: { greater_than: 1, only_integer: true }
-  validates :photo, presence: true
   validates :location, presence: true, allow_blank: false
   validates :description, presence: true, length: { maximum: 200 }, allow_blank: false
 end
