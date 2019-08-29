@@ -1,6 +1,6 @@
 class Meerkat < ApplicationRecord
   belongs_to :user
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   has_many :reviews, through: :reservations
   mount_uploader :photo, PhotoUploader
 
@@ -8,8 +8,6 @@ class Meerkat < ApplicationRecord
   validates :specialty, presence: true
   validates :age, presence: true, numericality: { greater_than: 1, less_than_or_equal_to: 17, only_integer: true }
   validates :price, presence: true, numericality: { greater_than: 1, only_integer: true }
-  validates :location, presence: true, allow_blank: false
-  validates :description, presence: true, length: { maximum: 200 }, allow_blank: false
-
-
+  validates :location, presence: true
+  validates :description, presence: true, length: { maximum: 500 }
 end

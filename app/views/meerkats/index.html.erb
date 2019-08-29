@@ -13,7 +13,7 @@
 </div>
 
 <div class="cards mb-5">
-  <% @meerkats.each do |meerkat| %>
+  <% @meerkats.sort_by(&:created_at).reverse.each do |meerkat| %>
     <%= link_to meerkat_path(meerkat) do %>
       <div class="card-trip">
         <%= image_tag(photo_or_fallback(meerkat)) %>
