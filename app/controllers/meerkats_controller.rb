@@ -3,7 +3,11 @@ class MeerkatsController < ApplicationController
   before_action :fetch_meerkat, only: [:edit, :update, :destroy]
 
   def index
-    @meerkats = policy_scope(Meerkat)
+    if params[:query].present?
+      @meerkats = policy_scope(Meerkat.search_by_name(params[:query]))
+    else
+      @meerkats = policy_scope(Meerkat)
+    end
     @user = current_user if user_signed_in?
   end
 

@@ -4,7 +4,15 @@
   <div id="banner-info" class="container">
     <h1>Welcome to Meerkatnb</h1>
     <p>The perfect platform to find a Meerkat to help you solve your problems</p>
-    <a class="btn btn-transparent" href="#banner-scroll-down">Search available Meerkats!</a>
+    <!-- <a class="btn btn-transparent" href="#banner-scroll-down">Search available Meerkats!</a> -->
+    <%= form_tag meerkats_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Meerkat!"
+      %>
+      <%= submit_tag "Search", class: "btn btn-transparent" %>
+    <% end %>
   </div>
 </div>
 
