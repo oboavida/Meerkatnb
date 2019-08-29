@@ -4,7 +4,7 @@
     <div class="form mt-4">
         <%= simple_form_for ([@reservation, Review.new]) do |f| %>
 
-          <%= f.input :rating, label: 'Rating', input_html: { autocomplete: 'off', autofocus: true } %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
           <%= f.input :comment, label: 'Comment', input_html: { autocomplete: 'off', autofocus: true } %>
           <%= f.submit 'Save', class: 'btn btn-mustard' %>
         <% end %>
