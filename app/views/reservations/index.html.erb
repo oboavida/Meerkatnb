@@ -21,7 +21,9 @@
               <td><%= reservation.date_end %></td>
               <td>
                 <% if policy(Review).create? %>
-                  <%= link_to "Add a review", new_reservation_review_path(reservation), class: "btn btn-light" %>
+                  <% unless reservation.review.present? %>
+                    <%= link_to "Add a review", new_reservation_review_path(reservation), class: "btn btn-light" %>
+                  <% end %>
                 <% end %>
               </td>
             </tr>
