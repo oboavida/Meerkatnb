@@ -49,7 +49,7 @@ class MeerkatsController < ApplicationController
   def destroy
     if @meerkat.reservations.any?
       flash[:alert] = 'Sorry, the meerkat can\'t be destroyed because it has reservations.'
-      render :show
+      redirect_to meerkat_path(@meerkat)
     else
       flash[:notice] = 'The meerkat was destroyed.'
       @meerkat.destroy
