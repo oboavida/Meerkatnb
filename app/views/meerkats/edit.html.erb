@@ -32,12 +32,8 @@
     class: "btn btn-mustard mt-2" %>
     </div>
      <%= link_to 'Go back', meerkat_path(@meerkat), class: "btn btn-mustard mt-2" %>
-
-
-
-
   </div>
-  <div class="z-index-positive col-md-4 center-background" style="background-image: url('https://cdn.africatravelresource.com/cdn/05explore%2Fexperiences%2Fanimals%2Fmeerkats%2F01/02ATR05010222-IM1002-the-best-locations-for-meerkats-in-africa-1475.jpg')">
+  <div class="z-index-positive col-md-4 center-background meerkat-image" style="background-image: url('<%= image_path(photo_or_fallback(@meerkat)) %>')">
 
   </div>
 </div>

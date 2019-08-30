@@ -3,7 +3,8 @@ const readURL = function(input) {
     var reader = new FileReader();
 
     reader.onload = function(e) {
-      $('#meerkat-preview-img').attr('src', e.target.result);
+      // $('#meerkat-preview-img').attr('src', e.target.result);
+      $('.meerkat-image').attr('style', "background-image: url(' " + e.target.result + "')");
     }
 
     reader.readAsDataURL(input.files[0]);
@@ -11,7 +12,7 @@ const readURL = function(input) {
 }
 
 const initImagePreview = function() {
-  $("#meerkat_photo").change(function() {
+  $("#meerkat_photo, #user_photo").change(function() {
     readURL(this);
   });
 }
@@ -19,3 +20,4 @@ const initImagePreview = function() {
 
 
 export  { initImagePreview };
+
