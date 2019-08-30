@@ -25,9 +25,10 @@
       <%= f.input :date_start, as: :string, placeholder: 'Select your dates', class: 'form-control show-form', required: false, input_html: {class: "datepicker"}, label: false %>
     </div>
     <div>
-      <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4" %>
+      <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4", id: "btn-book-now" %>
     </div>
     <div>
+      <div id="date-error-message"></div>
       <p>Total: <strong><span id="total-price">0</span> €</strong> </p>
     </div>
     <% end %>
@@ -43,17 +44,16 @@
       <div class="user-photo-name d-flex align-items-center">
         <div><%= image_tag photo_or_fallback_user(review.user), class: "avatar dropdown-toggle" %></div>
         <div class="mt-3 ml-2">
-            <% if review.user.name.empty? %>
+            <% if review.user.name.nil? || review.user.name.empty? %>
               <p>Anonymous Meerkat lover</p>
             <% else %>
               <p><%= review.user.name %></p>
             <% end %>
         </div>
       </div>
-      <p>Rating:</p>
       <%review.rating.times do %>
         <%= image_tag "estrela_amarela.png", width: 15 %>
-      <% end %>
+      <% end %><br>
       <p><%= review.comment %></p>
     <% end %>
   </div>

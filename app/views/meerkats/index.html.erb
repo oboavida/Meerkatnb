@@ -4,20 +4,23 @@
   <div id="banner-info" class="container">
     <h1>Welcome to Meerkatnb</h1>
     <p>The perfect platform to find a Meerkat to help you solve your problems</p>
-    <!-- <a class="btn btn-transparent" href="#banner-scroll-down">Search available Meerkats!</a> -->
-    <%= form_tag meerkats_path, method: :get do %>
+    <%= form_tag meerkats_path, autocomplete: 'off', method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
-        placeholder: "Find a Meerkat!"
+        class: "form-control search-input",
+        placeholder: "Search by name or specialty"
       %>
-      <%= submit_tag "Search", class: "btn btn-transparent" %>
+      <%= submit_tag "Search Meerkats!", class: "btn btn-transparent search-button" %>
     <% end %>
   </div>
 </div>
 
-<div id="banner-scroll-down" class="container my-5 text-center">
-  <h2>Check out our amazing Meerkat selection!</h2>
+<div class="container my-5 text-center">
+  <% if @meerkats.any? %>
+    <h2 id="homepage-title">Check out our amazing Meerkat selection!</h2>
+  <% else %>
+    <h2 id="homepage-title">No meerkats found for your search 🙁</h2>
+  <% end %>
 </div>
 
 <div class="cards mb-5">
