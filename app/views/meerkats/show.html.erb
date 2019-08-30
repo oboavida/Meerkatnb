@@ -25,9 +25,10 @@
       <%= f.input :date_start, as: :string, placeholder: 'Select your dates', class: 'form-control show-form', required: false, input_html: {class: "datepicker"}, label: false %>
     </div>
     <div>
-      <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4" %>
+      <%= f.submit "Book Now", class: "btn btn-mustard full-width mb-4", id: "btn-book-now" %>
     </div>
     <div>
+      <div id="date-error-message"></div>
       <p>Total: <strong><span id="total-price">0</span> €</strong> </p>
     </div>
     <% end %>
