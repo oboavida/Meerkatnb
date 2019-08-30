@@ -20,5 +20,16 @@ flatpickr(".datepicker", {
           const price = document.querySelector('.meerkat-price').innerText;
           const pricePerDay = Number.parseInt(price.split(" ")[0], 10);
           document.querySelector('#total-price').insertAdjacentHTML('afterbegin', pricePerDay * numberOfDays);
+
+          const errorMessage = document.querySelector('div#date-error-message');
+          const buttonBookNow = document.getElementById('btn-book-now');
+
+          if (selectedDates.length == 1) {
+            errorMessage.innerHTML = '<p> Please add your end date </p>';
+            buttonBookNow.disabled = true;
+          } else {
+            errorMessage.innerHTML = '';
+            buttonBookNow.disabled = false;
+          }
     }
 });
