@@ -28,40 +28,30 @@ puts 'Created users'
 meerkat_attributes = [
   {
     user: User.all.sample,
-    name: 'Antonio',
-    specialty: 'Cook',
+    name: 'Sylvester',
+    specialty: 'Personal Trainer',
     age: rand(1..17),
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
-    description: "The best Meerkat-chef you'll ever hire. Have loads of experience in cooking vegan food. In a special task to develop vegan meats, for him not be chosen as an ingredient. Special dishes include: Hakuna Matata Oven Batata. Alert: Be careful, sometimes it will eat the food that he coocked. No leftovers.",
-    remote_photo_url: 'https://media1.popsugar-assets.com/files/thumbor/Si5yKTEVd81dd7akJpOow4bPYJE/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2019/02/08/998/n/1922564/a50235035c5e096f329fb3.66606650_.jpg'
+    description: "Want to lose weight? Want to gain some good muscle? Sylvester is a crossfit, guy who will take you to the limit. He is also an actor, director, screenwriter, and producer. Give him a challenge and he's there.",
+    remote_photo_url: 'https://site-547756.mozfiles.com/files/547756/medium/Meerkat.jpg'
   },
   {
     user: User.all.sample,
-    name: 'Irene',
-    specialty: 'Assassin',
+    name: 'Gisela',
+    specialty: 'Haistylist',
     age: rand(1..17),
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
-    description: "Learned with the master of meerkat martial arts, Shung Sun Tzu to defend against the predators, and Krav Maga. Put her knowledge to work as a rented assasin, if you want someone to be killed call her. Get a special edge with this cute but killer meerkat. She will leave your enemies in the dust. Price may change depending of the sizes of the victims.",
-    remote_photo_url: 'https://techcrunch.com/wp-content/uploads/2015/03/juvenile_meerkats_playfighting1.jpg?w=680'
-  },
-  {
-    user: User.all.sample,
-    name: 'Carolina',
-    specialty: 'Fullstack programmer',
-    age: rand(1..17),
-    price: rand(5..50),
-    location: Faker::Address.city,
-    description: "Did a course of programing at the Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes has to take a break to smoke her fancy eletronic cigarette.",
-    remote_photo_url: 'https://media.mnn.com/assets/images/2017/06/closeup_meerkat_face.jpg.653x0_q80_crop-smart.jpg'
+    description: "Crazy good hairstylist! She loves cutting boy's long hair and helping them become more decent, never losing their charm. She started her early career cutting hair to her entire village of 5 628 meerkats. As you can see, experience is something not missing, guys. She will do her best and her best is in fact THE BEST.",
+    remote_photo_url: 'https://cdn.vox-cdn.com/thumbor/aITIB7yOYofNztwgYdPZdkqJSA0=/0x0:4895x3671/1200x800/filters:focal(0x0:4895x3671)/cdn.vox-cdn.com/uploads/chorus_image/image/45866620/143312573.0.0.jpg'
   },
   {
     user: User.all.sample,
     name: 'Pedro',
     specialty: 'Translator',
     age: rand(1..17),
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
     description: "Will help you with all your linguistic needs. Pretends to know Mandarin, English, Brazilian Portuguese, Italian, still trying to learn Portugal Portuguese he knows it all. Just ask for any portuguese slang. Came from Joao Pessoa by boat. But actually in a secret mission to get back the gold and sugar that was stolen.--",
     remote_photo_url: 'https://africageographic.com/wp-content/uploads/2018/01/Meerkat-face-1.jpg'
@@ -71,40 +61,90 @@ meerkat_attributes = [
     name: 'Jojo',
     specialty: 'Marketing Consultant',
     age: rand(1..17),
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
     description: "A boss-meerkat.A carrer driving meerkat. Alergic to gluten. Has a bachelor at the Nova Meerkat university, an MBA at the Meerkat International Business School.You can acess her linkedin page wwww.linkedin.com/jojomeerkat. Her only defect is perfeccionism.",
-    remote_photo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-naaGNB9W-OqP0k4r5GT4DNGk84rXdpGWYWDEah_wOjoGUFdVHw'
+    remote_photo_url: 'https://nationalzoo.si.edu/sites/default/files/animals/meerkat-001.jpg'
+  },
+  {
+    user: User.all.sample,
+    name: 'Antonio',
+    specialty: 'Cook',
+    age: rand(1..17),
+    price: rand(5..70),
+    location: Faker::Address.city,
+    description: "The best Meerkat-chef you'll ever hire. Have loads of experience in cooking vegan food. In a special task to develop vegan meats, for him not be chosen as an ingredient. Special dishes include: Hakuna Matata Oven Batata. Alert: Be careful, sometimes it will eat the food that he coocked. No leftovers.",
+    remote_photo_url: 'https://media1.popsugar-assets.com/files/thumbor/Si5yKTEVd81dd7akJpOow4bPYJE/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2019/02/08/998/n/1922564/a50235035c5e096f329fb3.66606650_.jpg'
   },
   {
     user: User.all.sample,
     name: 'Lolita',
     specialty: 'Poser for Life',
     age: 8,
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
     description: "She's a millennial & a star. Half italian, half french, she's was in the right position to embody both dolce far niente and je ne sais quoi. She loves Instagram, eating fancy food and going to private swimming pools. If you need some company and someone to pose with for some photos - Lolita is the one to call.",
     remote_photo_url: 'https://i.redd.it/p9e26fsrxvuy.jpg'
   },
   {
     user: User.all.sample,
+    name: 'Irene',
+    specialty: 'Assassin',
+    age: rand(1..17),
+    price: rand(5..70),
+    location: Faker::Address.city,
+    description: "Learned with the master of meerkat martial arts, Shung Sun Tzu to defend against the predators, and Krav Maga. Put her knowledge to work as a rented assasin, if you want someone to be killed call her. Get a special edge with this cute but killer meerkat. She will leave your enemies in the dust. Price may change depending of the sizes of the victims.",
+    remote_photo_url: 'https://techcrunch.com/wp-content/uploads/2015/03/juvenile_meerkats_playfighting1.jpg?w=680'
+  },
+  {
+    user: User.all.sample,
+    name: 'Carolina',
+    specialty: 'Fullstack programmer',
+    age: rand(1..17),
+    price: rand(5..70),
+    location: Faker::Address.city,
+    description: "Did a course of programing at the Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes has to take a break to smoke her fancy eletronic cigarette.",
+    remote_photo_url: 'https://media.mnn.com/assets/images/2017/06/closeup_meerkat_face.jpg.653x0_q80_crop-smart.jpg'
+  },
+  {
+    user: User.all.sample,
+    name: 'Ulrik',
+    specialty: 'Bumgee Jumper',
+    age: 14,
+    price: rand(5..70),
+    location: Faker::Address.city,
+    description: "OMG. It's the craziest norwegian meerkat, hell famous worldwide. It has adrenaline in his veins (natural one, doesn't take drugs) and a heart of gold. His mamma always told him: go with the flow, darling. Thus, he was married 8 times. Met 7 out of 8 wives in the air or right after touching the ground again.",
+    remote_photo_url: 'https://i.dailymail.co.uk/i/pix/2010/11/10/article-1328454-0BFF9A0A000005DC-397_634x919.jpg'
+  },
+  {
+    user: User.all.sample,
     name: 'Gracindo',
     specialty: 'Peacemaker',
     age: rand(1..17),
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
     description: "If you have any conflict with someone, do call Gracindo. Top conflict mediator, conflict coaching and conflict consultant you will ever meet. He's insanely bomb ass effective in conflict resolution. He won't solve the world problems, but surely will solve yours! Have faith. Breath in, breath out.",
     remote_photo_url: 'https://cdn.wallpapersafari.com/84/34/tdR9Xv.jpg'
   },
   {
     user: User.all.sample,
+    name: 'Raikkonen',
+    specialty: 'Party wild beast',
+    age: 13,
+    price: 999,
+    location: Faker::Address.city,
+    description: "Ex-Formula Meerkat 1 racing driver. Very used to be flattered and don't give a sh*t about it. Old, but a hell of a dancer these days away from the auto stuff. He is always eager to party: Lux, Main, K Urban Beach, Bliss, you name the place you wanna meet him! Expect a cheerful. This meerkat has personality, don't take him for granted. Dance until the night fever is over.",
+    remote_photo_url: 'https://welshmountainzoo.org/uploads/images-general/Meerkat-4.jpg'
+  },
+  {
+    user: User.all.sample,
     name: 'Maria',
     specialty: 'Grandma',
     age: 17,
-    price: rand(5..50),
+    price: rand(5..70),
     location: Faker::Address.city,
     description: "She's the best nanny. She had 29 children in young years but they'r all grown ups by now and she still feels like taking care of kids. She's also an excellet cook. So cute, so perfect, so grandma.",
-    remote_photo_url: 'https://thumbs-prod.si-cdn.com/H4aj35M4otBdVlIuAttiSMUNids=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/Surprising-Science-meerkat-alpha-females.jpg'
+    remote_photo_url: 'https://news.umich.edu/wp-content/uploads/2019/02/DSC_0464.jpg'
   }
 ]
 
