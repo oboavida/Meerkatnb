@@ -10,4 +10,11 @@ class Meerkat < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 1, only_integer: true }
   validates :location, presence: true
   validates :description, presence: true, length: { maximum: 500 }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name,
+                  against: [:name],
+                  using: {
+                      tsearch: { prefix: true }
+                  }
 end
