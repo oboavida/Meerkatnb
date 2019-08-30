@@ -13,7 +13,7 @@ class Meerkat < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
-                  against: [:name],
+                  against: [:name, :specialty],
                   using: {
                       tsearch: { prefix: true }
                   }

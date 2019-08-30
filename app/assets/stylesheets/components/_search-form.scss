@@ -1,0 +1,16 @@
+#banner-info .form-control {
+  background-color: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 0px;
+  font-size: 17px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  color: white !important;
+  &:focus {
+    box-shadow: 0 0 0 0 rgba(22, 127, 251, 0.25)
+  }
+}
+
+#banner-info ::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
