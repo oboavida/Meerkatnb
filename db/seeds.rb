@@ -33,8 +33,9 @@ meerkat_attributes = [
     age: rand(2..17),
     price: rand(5..70),
     location: Faker::Address.city,
+    description: "Want to lose weight? Want to gain some good muscle? Sylvester is a crossfit, guy who will take you to the limit. He is also an actor, director, screenwriter, and producer. Give him a challenge and he's there.",
+    remote_photo_url: 'https://i.postimg.cc/xdzCVdkC/rambo.jpg'
     description: "Want to lose weight? Want to gain some good muscle? Sylvester is a body-builder/crossfit athlete, who will take you to the limit. He is also an actor, director, screenwriter, and producer. Give him a challenge and he's there.",
-    remote_photo_url: 'https://site-547756.mozfiles.com/files/547756/medium/Meerkat.jpg'
   },
   {
     user: User.all.sample,
@@ -43,8 +44,8 @@ meerkat_attributes = [
     age: rand(2..17),
     price: rand(5..70),
     location: Faker::Address.city,
+    remote_photo_url: 'https://i.postimg.cc/NFWf5q2D/hairdresser.jpg'
     description: "Crazy good hairstylist! She loves styling guys with long hair and helping them achieve a more decent look, without losing their charm. She started her early career cutting hair to her entire village of 5 628 meerkats. As you can see, experience abound, guys. She will do her best and her best is in fact THE BEST.",
-    remote_photo_url: 'https://cdn.vox-cdn.com/thumbor/aITIB7yOYofNztwgYdPZdkqJSA0=/0x0:4895x3671/1200x800/filters:focal(0x0:4895x3671)/cdn.vox-cdn.com/uploads/chorus_image/image/45866620/143312573.0.0.jpg'
   },
   {
     user: User.all.sample,
@@ -103,8 +104,8 @@ meerkat_attributes = [
     age: rand(2..17),
     price: rand(5..70),
     location: Faker::Address.city,
+    remote_photo_url: 'https://i.postimg.cc/ZqLjTJv8/programmer.jpg'
     description: "Did a course in programing at Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes has to take a break to smoke her fancy eletronic cigarettes.",
-    remote_photo_url: 'https://media.mnn.com/assets/images/2017/06/closeup_meerkat_face.jpg.653x0_q80_crop-smart.jpg'
   },
   {
     user: User.all.sample,
