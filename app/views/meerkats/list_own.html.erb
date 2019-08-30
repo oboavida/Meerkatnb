@@ -1,23 +1,20 @@
-<h1>My Meerkats</h1>
+<div class="container p-3 mt-4">
+  <h1>My Meerkats</h1>
 
-<% @meerkats.each do |meerkat| %>
   <div class="cards mb-5">
-    <%= link_to list_own_meerkats_path, :id => 'lreservations', 'data-toggle' => 'modal', 'data-target' => "#reservationsModal_#{meerkat.id}" do %>
-      <div class="card-trip">
-        <%= image_tag(photo_or_fallback(meerkat)) %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= meerkat.name %></h2>
-              <p><%= meerkat.specialty %></p>
-            </div>
-            <div>
+    <% @meerkats.each do |meerkat| %>
+      <%= link_to list_own_meerkats_path, :id => 'lreservations', 'data-toggle' => 'modal', 'data-target' => "#reservationsModal_#{meerkat.id}" do %>
+        <div class="card-trip">
+          <%= image_tag(photo_or_fallback(meerkat)) %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= meerkat.name %></h2>
+                <p><%= meerkat.specialty %></p>
+              </div>
               <h2 class="card-trip-pricing"><%= meerkat.price %> € per day</h2>
             </div>
-          </div>
         </div>
+      <% end %>
+      <%= render 'own_modal', meerkat: meerkat %>
     <% end %>
   </div>
-  <%= render 'own_modal', meerkat: meerkat %>
-<% end %>
-
-
