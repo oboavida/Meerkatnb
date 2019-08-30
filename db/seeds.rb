@@ -34,7 +34,7 @@ meerkat_attributes = [
     price: rand(5..70),
     location: Faker::Address.city,
     description: "Want to lose weight? Want to gain some good muscle? Sylvester is a crossfit, guy who will take you to the limit. He is also an actor, director, screenwriter, and producer. Give him a challenge and he's there.",
-    remote_photo_url: 'https://site-547756.mozfiles.com/files/547756/medium/Meerkat.jpg'
+    remote_photo_url: 'https://i.postimg.cc/xdzCVdkC/rambo.jpg'
   },
   {
     user: User.all.sample,
@@ -44,7 +44,7 @@ meerkat_attributes = [
     price: rand(5..70),
     location: Faker::Address.city,
     description: "Crazy good hairstylist! She loves cutting boy's long hair and helping them become more decent, never losing their charm. She started her early career cutting hair to her entire village of 5 628 meerkats. As you can see, experience is something not missing, guys. She will do her best and her best is in fact THE BEST.",
-    remote_photo_url: 'https://cdn.vox-cdn.com/thumbor/aITIB7yOYofNztwgYdPZdkqJSA0=/0x0:4895x3671/1200x800/filters:focal(0x0:4895x3671)/cdn.vox-cdn.com/uploads/chorus_image/image/45866620/143312573.0.0.jpg'
+    remote_photo_url: 'https://i.postimg.cc/NFWf5q2D/hairdresser.jpg'
   },
   {
     user: User.all.sample,
@@ -104,7 +104,7 @@ meerkat_attributes = [
     price: rand(5..70),
     location: Faker::Address.city,
     description: "Did a course of programing at the Le Wagon in the Botswana jungles. Badass in the front and the back -- end, we mean. Sometimes has to take a break to smoke her fancy eletronic cigarette.",
-    remote_photo_url: 'https://media.mnn.com/assets/images/2017/06/closeup_meerkat_face.jpg.653x0_q80_crop-smart.jpg'
+    remote_photo_url: 'https://i.postimg.cc/ZqLjTJv8/programmer.jpg'
   },
   {
     user: User.all.sample,
