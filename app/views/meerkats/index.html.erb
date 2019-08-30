@@ -15,8 +15,12 @@
   </div>
 </div>
 
-<div id="banner-scroll-down" class="container my-5 text-center">
-  <h2>Check out our amazing Meerkat selection!</h2>
+<div class="container my-5 text-center">
+  <% if @meerkats.any? %>
+    <h2 id="homepage-title">Check out our amazing Meerkat selection!</h2>
+  <% else %>
+    <h2 id="homepage-title">No meerkats found for your search 🙁</h2>
+  <% end %>
 </div>
 
 <div class="cards mb-5">
