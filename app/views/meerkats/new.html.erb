@@ -15,17 +15,22 @@
             <%= f.input :description, placeholder: 'Description', label: false  %>
           </div>
         </div>
-
-        <label class="btn btn-mustard">
-          Add photo
-          <span style="display:none;">
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-          </span>
-        </label><br/>
-
-        <%= f.submit 'Create Meerkat', class: "btn btn-mustard" %>
+        <div class="d-flex">
+          <div>
+            <label class="btn btn-mustard">
+              Add photo
+              <span style="display:none;">
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+              </span>
+            </label><br/>
+          <%= f.submit 'Create Meerkat', class: "btn btn-mustard" %>
+          </div>
       <% end %>
+        <div>
+          <img id="meerkat-preview-img" src="" alt="" class = "meerkat-photo";/>
+        </div>
+      </div>
     </div>
 
   </div>
