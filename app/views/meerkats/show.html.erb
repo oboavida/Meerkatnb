@@ -43,7 +43,7 @@
       <div class="user-photo-name d-flex align-items-center">
         <div><%= image_tag photo_or_fallback_user(review.user), class: "avatar dropdown-toggle" %></div>
         <div class="mt-3 ml-2">
-            <% if review.user.name.empty? %>
+            <% if review.user.name.nil? %>
               <p>Anonymous Meerkat lover</p>
             <% else %>
               <p><%= review.user.name %></p>
