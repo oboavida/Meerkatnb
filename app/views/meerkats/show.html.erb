@@ -5,7 +5,8 @@
     <p><%= @meerkat.age %> years old</p>
     <p>from <%= @meerkat.location.capitalize %></p>
     <p><%= @meerkat.description %></p>
-    <p>Overall service rating:</p>
+    <%= render 'stars' %>
+
   </div>
 
   <div id="show-image-container" class="col-lg-6">
@@ -49,7 +50,10 @@
             <% end %>
         </div>
       </div>
-      <p>Rating: <%= review.rating %></p>
+      <p>Rating:</p>
+      <%review.rating.times do %>
+        <%= image_tag "estrela_amarela.png", width: 15 %>
+      <% end %>
       <p><%= review.comment %></p>
     <% end %>
   </div>

@@ -1,0 +1,15 @@
+<p>Overall service rating:</p>
+  <% if @result == 0 %>
+    <% 5.times do %>
+    <%= image_tag "estrela_cinzenta.png", width: 20 %>
+    <% end %>
+  <% else %>
+    <% @result.times do %>
+   <%= image_tag "estrela_amarela.png", width: 20 %>
+    <% end %>
+    <% (5 - @result).times do  %>
+   <%= image_tag "estrela_cinzenta.png", width: 20 %>
+    <% end %>
+  <% end %>
+
+
